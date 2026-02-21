@@ -64,7 +64,7 @@ st.markdown("""
 @st.cache_resource
 def load_sentiment_pipeline():
     """Load the FinBERT model and tokenizer using the transformers pipeline."""
-    model_name = "ProsusAI/finbert"
+    model_name = "distilbert-base-uncased-finetuned-sst-2-english"
     tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token)
     model = AutoModelForSequenceClassification.from_pretrained(model_name, token=hf_token)
     return pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
